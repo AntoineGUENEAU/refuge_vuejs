@@ -58,6 +58,9 @@ export default new Vuex.Store({
     mutations: {
         addCart : function (state , pet) {
             state.cart.push(pet);
+        },
+        removeCart : function (state , pet_cart) {
+            state.cart = state.cart.filter( pet => pet.id != pet_cart.id)
         }
     },
     actions: {},
