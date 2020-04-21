@@ -21,16 +21,14 @@
 
 
 <script>
+    import cartMixin from "../mixins/cartMixin";
+
     export default {
+        mixins: [cartMixin],
         name: 'PetShow',
         computed: {
             pet: function() {
                 return this.$store.getters.getTodoById(this.$route.params.id)
-            }
-        },
-        methods : {
-            addCart : function () {
-                this.$store.commit('addCart', this.pet)
             }
         }
     }

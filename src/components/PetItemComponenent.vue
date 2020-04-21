@@ -8,15 +8,13 @@
 </template>
 
 <script>
+    import cartMixin from "../mixins/cartMixin";
+
     export default {
+        mixins: [cartMixin],
         name: "PetItemComponenent",
         props: {
             pet: null,
-        },
-        methods : {
-            addCart : function () {
-                this.$store.commit('addCart', this.pet)
-            }
         }
     }
 </script>
