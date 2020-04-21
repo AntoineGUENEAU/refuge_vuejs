@@ -21,7 +21,7 @@
 
 
 <script>
-    import BtnAddCart from "../components/BtnAddCart";
+    import BtnAddCart from "../plugins/cart-plugin/components/BtnAddCart";
 
     export default {
         components: {BtnAddCart},

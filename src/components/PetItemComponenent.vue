@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import BtnAddCart from "./BtnAddCart";
+    import BtnAddCart from "../plugins/cart-plugin/components/BtnAddCart";
 
     export default {
         components: {BtnAddCart},

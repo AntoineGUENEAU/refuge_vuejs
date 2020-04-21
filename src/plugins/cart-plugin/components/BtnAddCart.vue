@@ -8,10 +8,7 @@
 </template>
 
 <script>
-    import cartMixin from "../mixins/cartMixin";
-
     export default {
-        mixins: [cartMixin],
         name: "BtnAddCart",
         props: {
             pet: null,
@@ -19,6 +16,11 @@
         computed: {
             IsInCart() {
                 return this.$store.getters.cart.find(pet => pet.id == this.pet.id)
+            }
+        },
+        methods : {
+            addCart : function () {
+                this.$store.commit('addCart', this.pet)
             }
         }
     }
