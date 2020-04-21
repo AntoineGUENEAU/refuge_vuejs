@@ -1,7 +1,7 @@
 <template>
     <li class="list-group-item">
-        <router-link :to="{ name: 'PetShow', params: { id: pet.id }}">
-            {{pet.race}} - {{pet.name}}
+        <img class="picture" :src="pet.image">
+        <router-link :to="{ name: 'PetShow', params: { id: pet.id }}">{{pet.race.toUpperCase()}} - {{pet.name}}
         </router-link>
         <btn-add-cart :pet="pet"></btn-add-cart>
     </li>
@@ -18,3 +18,11 @@
         }
     }
 </script>
+
+<style>
+    img{
+        height: 50px;
+        width: 50px;
+        margin-right: 20px;
+    }
+</style>
