@@ -1,8 +1,8 @@
 <template>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-light bg-light justify-content-between">
             <router-link to="/" class="navbar-brand">Nos animaux</router-link>
-            <router-link to="/cart" class="navbar-brand">Panier</router-link>
+            <span class="float-right"><router-link to="/cart" class="navbar-brand">Panier <span class="badge btn-danger">{{$store.getters.cartCounter}}</span></router-link></span>
         </nav>
         <div class="container">
             <router-view/>

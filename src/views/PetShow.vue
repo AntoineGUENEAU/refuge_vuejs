@@ -14,7 +14,7 @@
                 </ul>
             </div>
             <router-link :to="{ name: 'PetEdit', params: { id: pet.id }}"><button class="btn btn-secondary">Modifier la fiche animal</button></router-link>
-            <button class="btn btn-primary float-right">Ajouter au panier</button>
+            <button class="btn btn-primary float-right" @click="addCart">Ajouter au panier</button>
         </div>
     </div>
 </template>
@@ -26,6 +26,11 @@
         computed: {
             pet: function() {
                 return this.$store.getters.getTodoById(this.$route.params.id)
+            }
+        },
+        methods : {
+            addCart : function () {
+                this.$store.commit('addCart', this.pet)
             }
         }
     }

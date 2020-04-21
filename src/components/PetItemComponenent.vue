@@ -1,16 +1,22 @@
 <template>
-    <router-link :to="{ name: 'PetShow', params: { id: pet.id }}">
-        <li class="list-group-item">
+    <li class="list-group-item">
+        <router-link :to="{ name: 'PetShow', params: { id: pet.id }}">
             {{pet.race}} - {{pet.name}}
-        </li>
-    </router-link>
+        </router-link>
+        <button class="float-right btn btn-primary" @click="addCart">Ajout au panier</button>
+    </li>
 </template>
 
 <script>
     export default {
         name: "PetItemComponenent",
-        props : {
-            pet : null,
+        props: {
+            pet: null,
+        },
+        methods : {
+            addCart : function () {
+                this.$store.commit('addCart', this.pet)
+            }
         }
     }
 </script>

@@ -45,13 +45,19 @@ export default new Vuex.Store({
                 }
             ]),
         ],
+        cart : []
     },
     getters: {
         getTodoById: (state) => (id) => {
             return state.pets.find(pet => pet.id == id)
+        },
+        cartCounter : (state) => state.cart.length
+    },
+    mutations: {
+        addCart : function (state , pet) {
+            state.cart.push(pet);
         }
     },
-    mutations: {},
     actions: {},
     modules: {}
 })
