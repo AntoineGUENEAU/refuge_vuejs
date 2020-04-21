@@ -3,7 +3,7 @@
         <img class="picture" :src="pet.image">
         <router-link :to="{ name: 'PetShow', params: { id: pet.id }}">{{pet.race.toUpperCase()}} - {{pet.name}}
         </router-link>
-        <btn-add-cart :pet="pet"></btn-add-cart>
+        <btn-add-cart v-if="!hide_icon_cart" :pet="pet"></btn-add-cart>
     </li>
 </template>
 
@@ -14,7 +14,8 @@
         components: {BtnAddCart},
         name: "PetItemComponenent",
         props: {
-            pet: null,
+            hide_icon_cart : null,
+            pet : null,
         }
     }
 </script>
