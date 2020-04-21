@@ -14,17 +14,17 @@
                 </ul>
             </div>
             <router-link :to="{ name: 'PetEdit', params: { id: pet.id }}"><button class="btn btn-secondary">Modifier la fiche animal</button></router-link>
-            <button class="btn btn-primary float-right" @click="addCart">Ajouter au panier</button>
+            <btn-add-cart :pet="pet"></btn-add-cart>
         </div>
     </div>
 </template>
 
 
 <script>
-    import cartMixin from "../mixins/cartMixin";
+    import BtnAddCart from "../components/BtnAddCart";
 
     export default {
-        mixins: [cartMixin],
+        components: {BtnAddCart},
         name: 'PetShow',
         computed: {
             pet: function() {

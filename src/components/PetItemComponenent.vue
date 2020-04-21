@@ -3,15 +3,15 @@
         <router-link :to="{ name: 'PetShow', params: { id: pet.id }}">
             {{pet.race}} - {{pet.name}}
         </router-link>
-        <button class="float-right btn btn-primary" @click="addCart">Ajout au panier</button>
+        <btn-add-cart :pet="pet"></btn-add-cart>
     </li>
 </template>
 
 <script>
-    import cartMixin from "../mixins/cartMixin";
+    import BtnAddCart from "./BtnAddCart";
 
     export default {
-        mixins: [cartMixin],
+        components: {BtnAddCart},
         name: "PetItemComponenent",
         props: {
             pet: null,

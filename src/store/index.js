@@ -51,7 +51,8 @@ export default new Vuex.Store({
         getTodoById: (state) => (id) => {
             return state.pets.find(pet => pet.id == id)
         },
-        cartCounter : (state) => state.cart.length
+        cartCounter : (state) => state.cart.length,
+        cart : (state) => state.cart,
     },
     mutations: {
         addCart : function (state , pet) {
